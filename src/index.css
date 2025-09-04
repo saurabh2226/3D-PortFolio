@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 84% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 263 70% 50.4%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 263 70% 60%;
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 263 70% 50.4%;
+    --accent-foreground: 210 40% 98%;
+
+    --success: 142 71% 45.4%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 84% 4.9%;
+
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 263 70% 50.4%;
+
+    --radius: 0.75rem;
+    
+    /* Custom portfolio colors */
+    --tech-cyan: 180 100% 50%;
+    --tech-purple: 263 70% 50.4%;
+    --tech-blue: 217 91% 60%;
+    --tech-green: 142 71% 45.4%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--tech-cyan)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--tech-purple)), hsl(var(--tech-blue)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(215 27.9% 8%));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--primary-glow) / 0.3), hsl(var(--tech-cyan) / 0.3));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 50px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 8px 32px hsl(222 84% 4.9% / 0.3);
+    --shadow-tech: 0 0 30px hsl(var(--tech-cyan) / 0.4);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
+
+    --primary: 263 70% 50.4%;
+    --primary-foreground: 210 40% 98%;
+    --primary-glow: 263 70% 60%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 263 70% 50.4%;
+    --accent-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 263 70% 50.4%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-tech {
+    box-shadow: var(--shadow-tech);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .text-tech-cyan {
+    color: hsl(var(--tech-cyan));
+  }
+  
+  .text-tech-purple {
+    color: hsl(var(--tech-purple));
+  }
+  
+  .text-tech-blue {
+    color: hsl(var(--tech-blue));
+  }
+  
+  .text-tech-green {
+    color: hsl(var(--tech-green));
+  }
+}
